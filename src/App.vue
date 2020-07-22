@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scope>
 *{
   box-sizing: border-box !important;
   -webkit-box-sizing: border-box !important;

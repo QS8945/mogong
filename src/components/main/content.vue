@@ -123,7 +123,7 @@ export default {
 }
 </script>
 
-<style>
+<style scope>
   #content {
     background: #ebf0f5;
     height: 100%;

@@ -187,7 +187,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scope>
   .el-menu-item.is-active {
     color: #40C3AB !important;
     &:hover{
