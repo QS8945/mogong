@@ -415,23 +415,25 @@ const COMMONJS = {
     getTreeUser()
       .then(res => {
         let menuList = res.data
-        console.log(COMMONJS.getFirstPage(menuList))
-        if ((sourceType === 'back')) {
-        //   Vue.$store.commit('delete_tabs', Vue.$route.path)
-          router.push({
-            path: COMMONJS.getFirstPage(menuList)
-          })
-        //   localStorage.setItem('refreshHome', 'false')
-        } else if ((sourceType === 'web')) {
-        //   if (Vue.$route.path === '/' || Vue.$route.path === '/home') {
-        //     return
-        //   }
-        //   Vue.$store.commit('delete_tabs', Vue.$route.path)
-          router.push({
-            path: '/home'
-          })
-        //   localStorage.setItem('refreshHome', 'false')
-        }
+        router.push({
+          path: '/workbench'
+        })
+        // if ((sourceType === 'back')) {
+        // //   Vue.$store.commit('delete_tabs', Vue.$route.path)
+        //   router.push({
+        //     path: COMMONJS.getFirstPage(menuList)
+        //   })
+        // //   localStorage.setItem('refreshHome', 'false')
+        // } else if ((sourceType === 'web')) {
+        // //   if (Vue.$route.path === '/' || Vue.$route.path === '/home') {
+        // //     return
+        // //   }
+        // //   Vue.$store.commit('delete_tabs', Vue.$route.path)
+        //   router.push({
+        //     path: '/home'
+        //   })
+        // //   localStorage.setItem('refreshHome', 'false')
+        // }
       }).catch(() => {
       })
   },

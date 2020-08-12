@@ -69,7 +69,7 @@ export default new Router({
     },
     // home
     {
-      path: '/home',
+      path: '/workbench',
       name: '主页',
       component: Main,
       meta: {
@@ -78,7 +78,7 @@ export default new Router({
       },
       children: [
         {
-          path: '/home',
+          path: '/workbench',
           name: '工作台',
           meta: {
             requireAuth: true, // 配置此条，进入页面前判断是否需要登陆
@@ -922,6 +922,34 @@ export default new Router({
         { name: '字典管理', path: '/dicMangeListNew', component: () => import('@/views/backstageManagement/sysManagement/dicMangeList.vue') },
         { name: 'app-update-management', path: '/appUpdateManagement', component: () => import('@/views/backstageManagement/appUpdateManagement/appUpdateManagement.vue') }
       ]
+    },
+    {
+      path: '/systemManagement',
+      name: '系统管理',
+      component: Main,
+      meta: {
+        requireAuth: true, // 配置此条，进入页面前判断是否需要登陆
+        keepAlive: true
+      },
+      children: [
+        {
+          path: '/systemManagement/enterpriseInfo',
+          name: '企业信息',
+          meta: {
+            requireAuth: true, // 配置此条，进入页面前判断是否需要登陆
+            keepAlive: true
+          },
+          component: () => import('./views/systemManagement/enterpriseInfo.vue')
+      },
+      {
+        path: '/systemManagement/organizationalStructure',
+        name: '组织架构',
+        meta: {
+          requireAuth: true, // 配置此条，进入页面前判断是否需要登陆
+          keepAlive: true
+        },
+        component: () => import('./views/systemManagement/organizationalStructure.vue')
+    }]
     }
     // 测试erp2.0
     // {

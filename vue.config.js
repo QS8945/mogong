@@ -4,9 +4,9 @@
 // const vueConf = new VueConf(process.argv)
 module.exports = {
   // publicPath: './', // vueConf.baseUrl, // 根域上下文目录
-  publicPath: 'erp/', // vueConf.baseUrl, // zhangren根域上下文目录
+  publicPath: 'mogong/', // vueConf.baseUrl, // zhangren根域上下文目录
   // publicPath: 'envcloud/', // vueConf.baseUrl, // 47根域上下文目录
-  outputDir: 'erp', // 构建输出目录
+  outputDir: 'mogong', // 构建输出目录
   assetsDir: 'assets', // 静态资源目录 (js, css, img, fonts)
   lintOnSave: false, // 是否开启eslint保存检测，有效值：ture | false | 'error'
   runtimeCompiler: true, // 运行时版本是否需要编译
@@ -29,31 +29,23 @@ module.exports = {
   },
   devServer: {
     open: true,
-    host: '0.0.0.0',
-    port: 8080,
-    https: false,
-    hotOnly: false,
-    proxy: null,
-    // proxy: {
-    //   '/web': {
-    //     target: 'http://192.168.253.210:8080',
-    //     // ws: true,
-    //     // changOrigin: true,
-    //     ws: false,
-    //     pathRewrite: {
-    //       '^/web': '/web'
-    //     }
-    //   },
-    //   '/file': {
-    //     target: 'http://192.168.253.210:8088',
-    //     // ws: true,
-    //     // changOrigin: true,
-    //     ws: false,
-    //     pathRewrite: {
-    //       '^/file': '/file'
-    //     }
-    //   }
-    // },
+    // host: 'localhost',
+    port: 8888,
+    // https: false,
+    // hotOnly: false,
+    // proxy: null,
+    proxy: {
+      '/teacher/web': {
+        target: 'https://teacher.moonknightsoft.com',
+        // target: 'http://2.39.88.118:8082',
+        ws: true,
+        changOrigin: true,
+        // ws: false,
+        pathRewrite: {
+          '^/teacher/web': '/teacher/web'
+        }
+      },
+    },
     before: app => {
     }
   }

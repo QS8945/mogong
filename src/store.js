@@ -5,8 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    openTab: [{ route: '/home', name: '工作台' }], // 所有打开的路由
-    activeIndex: '/home', // 激活状态
+    openTab: [{ route: '/workbench', name: '工作台' }], // 所有打开的路由
+    activeIndex: '/workbench', // 激活状态
     sourceType: ''
   },
   mutations: {

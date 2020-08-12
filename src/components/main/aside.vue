@@ -143,7 +143,9 @@ export default {
       } else if (COMMONJS.routesList && COMMONJS.routesList.length) {
         _this.menuList = JSON.parse(JSON.stringify(COMMONJS.routesList))
         // COMMONJS.getHomePage(_this.menuList)
-        _this.activeIndex = COMMONJS.getActiveIndex(this.$route.path)
+        _this.$nextTick(()=>{
+          _this.activeIndex = COMMONJS.getActiveIndex(this.$route.path)
+        })
       }
       // if (localStorage.getItem('sourceType') === 'web') {
       //   this.$store.commit('add_tabs', { route: '/home', name: '工作台' })
@@ -189,10 +191,9 @@ export default {
 
 <style lang="scss" scope>
   .el-menu-item.is-active {
-    color: #40C3AB !important;
-    &:hover{
-      color: #fff !important;
-    }
+    background: rgba(229, 244, 243, 1) !important;
+    color: rgba(0, 150, 136, 1) !important;
+    border-right: 3px solid rgba(0, 150, 136, 1);
   }
   .tabs-aside{
     overflow: scroll;
@@ -204,7 +205,7 @@ export default {
     .el-menu--collapse{
       .el-submenu.is-active{
         .el-submenu__title{
-          background: #40C3AB !important;
+          // background: #40C3AB !important;
           i{
             color: #fff;
           }
@@ -242,6 +243,9 @@ export default {
     .el-menu-item{
       height: 44px;
       line-height: 44px;
+      &:hover{
+        background: rgba(229, 244, 243, 1) !important;
+      }
     }
     .el-submenu{
       .el-submenu__title {
@@ -249,6 +253,10 @@ export default {
         line-height: 44px;
         i {
           color: #6F7C89;
+        }
+        &:hover{
+          color: #009688 !important;
+          background-color: #e5f4f3 !important;
         }
       }
       &.is-opened {
@@ -264,15 +272,15 @@ export default {
       .el-menu {
         .el-menu-item.is-active {
           background: rgba(229, 244, 243, 1) !important;
+          color: rgba(0, 150, 136, 1) !important;
+          border-right: 3px solid rgba(0, 150, 136, 1);
           -webkit-transition: all .3s;
           -moz-transition: all .3s;
           -ms-transition: all .3s;
           -o-transition: all .3s;
           transition: all .3s;
-          color: rgba(0, 150, 136, 1) !important;
-          border-right: 3px solid rgba(0, 150, 136, 1);
           &:hover{
-            background: #40C3AB !important;
+            background: #e5f4f3 !important;
           }
         }
         .el-menu-item {
@@ -283,9 +291,10 @@ export default {
           /*text-align: left;*/
           background: transparent;
 
-          &:hover {
-            background: rgb(197,197,197) !important;
-            color: #fff !important;
+          &:hover{
+            color: #009688 !important;
+            background: #e5f4f3 !important;
+            // color: #fff !important;
           }
         }
       }
@@ -302,87 +311,4 @@ export default {
       width: 64px;
     }
   }
-
-  /*.tabs-aside {*/
-    /*height: 100%;*/
-    /*.el-menu {*/
-      /*height: 100%;*/
-      /*.el-submenu {*/
-        /*.el-submenu__title {*/
-          /*height: 44px;*/
-          /*line-height: 44px;*/
-          /*i {*/
-            /*color: #EDEDED;*/
-          /*}*/
-        /*}*/
-        /*&.is-opened {*/
-          /*background: #3D5065;*/
-          /*.el-submenu__title, .el-menu, .el-menu-item {*/
-            /*background: #3D5065 !important;*/
-            /*color: #98aac0;*/
-          /*}*/
-          /*.el-menu-item{*/
-            /*color: #98aac0 !important;*/
-          /*}*/
-        /*}*/
-        /*.el-menu {*/
-          /*.el-menu-item.is-active {*/
-            /*background: #409EFF !important;*/
-            /*-webkit-transition: all .3s;*/
-            /*-moz-transition: all .3s;*/
-            /*-ms-transition: all .3s;*/
-            /*-o-transition: all .3s;*/
-            /*transition: all .3s;*/
-            /*color: #fff !important;*/
-            /*&:hover{*/
-              /*background: #409EFF !important;*/
-            /*}*/
-          /*}*/
-          /*.el-menu-item {*/
-            /*font-size: 13px;*/
-            /*line-height: 32px;*/
-            /*height: 32px;*/
-            /*padding-left: 70px !important;*/
-            /*text-align: left;*/
-            /*background: transparent;*/
-
-            /*&:hover {*/
-              /*background: rgb(55,72,90) !important;*/
-            /*}*/
-          /*}*/
-        /*}*/
-
-        /*.el-submenu__title {*/
-          /*text-align: left;*/
-        /*}*/
-      /*}*/
-    /*}*/
-  /*}*/
-
-  /*.el-menu{*/
-  /*border-right: none;*/
-  /*background-color: transparent;*/
-  /*.el-submenu{*/
-  /*.el-submenu__title:hover,.el-menu-item:hover{*/
-  /*background-color: transparent;*/
-  /*font-weight: 550;*/
-  /*}*/
-  /*.el-submenu__title,.el-menu{*/
-  /*color: #fff;*/
-  /*width: 188px;*/
-  /*text-align: left;*/
-  /*.el-menu-item{*/
-  /*color: #fff;*/
-  /*padding: 0;*/
-  /*width: 188px;*/
-  /*min-width: 188px;*/
-  /*margin: 0;*/
-  /*&.is-active{*/
-  /*font-weight: 550;*/
-  /*background-color: transparent !important;*/
-  /*}*/
-  /*}*/
-  /*}*/
-  /*}*/
-  /*}*/
 </style>

@@ -11,17 +11,11 @@ let GLB_CONFIG = {
     // serviceSiteRootUrl: 'http://192.168.253.224:8080', // hongjie服务器
     // serviceErpRootUrl: window.location.protocol + '//' + window.location.host + '/SWM', // erp2.0后端
     // serviceErpRootUrl: 'http://192.168.253.210:8090', // xiaohui erp2.0后端
-    serviceErpRootUrl: 'http://192.168.253.45:8089', // zhiyuerp2.0后端
+    serviceErpRootUrl: 'https://teacher.moonknightsoft.com/teacher/web', // zhiyuerp2.0后端
     // serviceErpRootUrl: 'http://192.168.253.224:8089', // hongjie erp2.0后端
     // serviceErpRootUrl: 'http://58.210.204.106:7111/SWM', // 测试服务器erp2.0后端
     // serviceErpRootUrl: 'http://192.168.253.210:8090', // erp2.0后端
-    fileServer: window.location.protocol + '//' + window.location.hostname + ':9999' + '/file/', // ngx外网file
-    parentIframeAddress: window.location.protocol + '//' + window.location.host + '/page', // parent iframe
-    childIframeAddress: window.location.protocol + '//' + window.location.hostname + ':8020/SWMWeb', // parent iframe
-    // childIframeAddress: 'http://127.0.0.1:8020/SWMWeb/', // parent iframe
-    managementUrl: window.location.protocol + '//' + window.location.hostname + ':8081/erp-manage#/blankPage', // 管理后台
-    // managementUrl: 'http://58.210.204.106:7111/env-manage#/blankPage', // 管理后台
-    workflowUrl: 'http://localhost:8082/jsite/a' // 工作流地址
+    fileServer: 'https://www.moonknightsoft.com', // ngx外网file
   },
   prodUrl: {
     serviceSiteRootUrl: window.location.protocol + '//' + window.location.host + '/api', // zhangren发布生产服务器
